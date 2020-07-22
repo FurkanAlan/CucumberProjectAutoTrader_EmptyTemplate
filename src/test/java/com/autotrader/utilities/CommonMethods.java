@@ -1,7 +1,6 @@
 package com.autotrader.utilities;
 
 
-
-public class MyDriver {
+public class CommonMethods {
 
 }
