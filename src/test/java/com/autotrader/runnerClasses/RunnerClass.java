@@ -10,7 +10,8 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "src/test/java/com/autotrader/stepDefinitions",
         //dryRun, en basta true yapilir ki feature larin snippetlerini olusturmak icin
-        dryRun =true,
+        //daha sonra StepDefinition daki metodlari uygulamak icin ise dryRun = false olur
+        dryRun =false,
         // tags = "@smoke_test,@unit_test",
         plugin = {"html:target/default-cucumber-reports",
                 "json:target/cucumber.json",

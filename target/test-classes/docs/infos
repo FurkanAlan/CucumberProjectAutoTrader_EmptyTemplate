@@ -37,3 +37,5 @@ yapiyoruz
 ########################### 6 ######################################
 code snippet leri olusturmak icin feature file calistirlir tabi dryRun = true olmali.
 
+########################### 7 ######################################
+PageFactory metodu, constructor icersine yaziliyor

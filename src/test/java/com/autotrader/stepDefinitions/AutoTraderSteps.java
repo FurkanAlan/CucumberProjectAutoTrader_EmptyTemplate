@@ -1,33 +1,48 @@
 package com.autotrader.stepDefinitions;
 
+import com.autotrader.pages.AdvanceSearchPage;
+import com.autotrader.pages.AutoTraderPage;
+import com.autotrader.utilities.MyDriver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
 
 public class AutoTraderSteps {
+    AdvanceSearchPage advanceSearchPage = new AdvanceSearchPage();
+    AutoTraderPage autoTraderPage = new AutoTraderPage();
+
     @Given("user test with {string} browser")
     public void user_test_with_browser(String string) {
+        System.out.println("The Landing Page");
+        String actTitle = MyDriver.get().getTitle();
+        String expTitle = "Used and New Car Sales, Review - Autotrader";
+        Assert.assertEquals(expTitle, actTitle);
 
     }
 
     @Given("User is in landing page")
     public void user_is_in_landing_page() {
-
+        System.out.println("The Landing Page");
+        String actTitle = MyDriver.get().getTitle();
+        String expTitle = "Used and New Car Sales, Review - Autotrader";
+        Assert.assertEquals(expTitle, actTitle);
     }
 
     @Then("Verify that {string} are present")
-    public void verify_that_are_present(String string) {
-
+    public void verify_that_are_present(String expected) {
+        autoTraderPage.verification(expected);
     }
 
     @Then("verify that search button is present.")
     public void verify_that_search_button_is_present() {
-
+        autoTraderPage.verifyButton();
     }
 
     @Then("verify that {string} and {string} is visible")
-    public void verify_that_and_is_visible(String string, String string2) {
-
+    public void verify_that_and_is_visible(String make, String model) {
+        autoTraderPage.verifyMakeAndModel(make, model);
     }
+
 
     @Given("User click Advance Search link on the home page")
     public void user_click_Advance_Search_link_on_the_home_page() {
